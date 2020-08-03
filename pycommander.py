@@ -26,8 +26,8 @@ def wait_for_ping(ip, name):
     fail_counter = 0
     while True:
         if fail_counter >= 15:
-            break
             print("[", name, "]", "The client took too long to start, skipping.")
+            break
         else:
             try:
                 subprocess.run(["ping", ip, "-c 3"], check=True, capture_output=True)
